@@ -15,15 +15,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        final EditText nameInput = (EditText)findViewById(R.id.nameInput);
+        final EditText nameInput = (EditText)findViewById(R.id.nameInput);
 
         Button sayHiActivityBtn = (Button)findViewById(R.id.sayHiBtn);
         sayHiActivityBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent startIntent = new Intent(getApplicationContext(),Main2Activity.class);
-//                String name = "Hello World! " + nameInput.getText().toString();
-                startIntent.putExtra("addInformation","Hello Wolrd! ");
+                String name = "Hello World! " + nameInput.getText().toString();
+                startIntent.putExtra("addInformation",name);
                 startActivity(startIntent);
             }
         });
